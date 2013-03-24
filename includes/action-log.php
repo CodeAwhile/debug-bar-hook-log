@@ -48,7 +48,11 @@ class Action_Log {
 			'regex' => array(),
 		),
 		'options' => array(
-			'exact' => array(),
+			'exact' => array(
+				'update_option',
+				'updated_option',
+				'update_site_option',
+			),
 			'regex' => array(
 				'/pre_option_/',
 				'/option_/',

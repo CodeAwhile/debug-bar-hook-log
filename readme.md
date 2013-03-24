@@ -4,7 +4,7 @@ Debug Bar Hook Log
 * Tags: [debug](http://wordpress.org/extend/plugins/tags/debug), [dev](http://wordpress.org/extend/plugins/tags/dev)
 * Requires at least: 3.1
 * Tested up to: 3.5.1
-* Stable tag: 0.1
+* Stable tag: 0.2
 
 Logs and displays a filterable list of all hooks called during the request, with their arguments
 
@@ -26,6 +26,9 @@ Installation
 
 Changelog
 ---------
+
+#### 0.2 ####
+* Added a search box for filtering hooks
 
 #### 0.1 ####
 * Initial release
