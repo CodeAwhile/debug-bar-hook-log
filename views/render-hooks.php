@@ -1,7 +1,7 @@
 <div class="render-hooks">
 	<div class="filters">
 		<p>Remove the following hooks from the list</p>
-		<?php foreach ( Action_Log::$ignore_hooks as $key => $values ) : ?>
+		<?php foreach ( $filter_groups as $key => $values ) : ?>
 			<p><input type="checkbox" class="render-hooks-filter" value="<?php echo $key; ?>" /> <?php echo $key . ' (' . implode(', ', array_merge( $values['exact'], $values['regex'] ) ) , ')'; ?></p>
 		<?php endforeach; ?>
         Search: <input class="render-hooks-search" />

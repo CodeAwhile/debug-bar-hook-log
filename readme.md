@@ -1,10 +1,10 @@
 Debug Bar Hook Log
 ==================
-* Contributors: itsananderson
+* Contributors: itsananderson, Zer0Divisor
 * Tags: [debug](http://wordpress.org/extend/plugins/tags/debug), [dev](http://wordpress.org/extend/plugins/tags/dev)
 * Requires at least: 3.1
 * Tested up to: 3.5.1
-* Stable tag: 0.2
+* Stable tag: 0.3
 
 Logs and displays a filterable list of all hooks called during the request, with their arguments
 
@@ -13,7 +13,7 @@ Description
 
 Adds a new tab to Debug Bar that displays the hooks that were called during the page request.
 
-You can live-filter the hooks that are displayed to hide noisy information, like translation options, and sanitization
+You can live-filter the hooks that are displayed to hide noisy information like translation, options, and sanitization
 
 Clicking on a hook will expand it to show the arguments that were passed to the hook
 
@@ -26,6 +26,10 @@ Installation
 
 Changelog
 ---------
+
+#### 0.3 ####
+* Clean up code
+* Remove Filter class files
 
 #### 0.2 ####
 * Added a search box for filtering hooks

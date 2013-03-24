@@ -3,7 +3,7 @@ Contributors: itsananderson, Zer0Divisor
 Tags: debug, dev
 Requires at least: 3.1
 Tested up to: 3.5.1
-Stable tag: 0.2
+Stable tag: 0.3
 
 Logs and displays a filterable list of all hooks called during the request, with their arguments
 
@@ -22,6 +22,10 @@ Clicking on a hook will expand it to show the arguments that were passed to the 
 1. Activate the plugin from the 'Plugins' menu in WordPress.
 
 == Changelog ==
+
+= 0.3 =
+* Clean up code
+* Remove Filter class files
 
 = 0.2 =
 * Added a search box for filtering hooks

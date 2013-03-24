@@ -1,18 +1,15 @@
 <?php
 
-class Action_Log {
+class Hook_Log {
 
 	public static function start() {
 	 add_action( 'all', array( __CLASS__, 'filter_it' ) );
 	 //add_action( 'shutdown', array( __CLASS__, 'die_it' ) );
 	}
 
-    static $actions = array();
-	static $hook_filter;
+    static $hooks = array();
 
-	static $disable_ignore_groups = array();
-
-	static $ignore_hooks = array(
+	static $filter_groups = array(
 		'misc' => array(
 			'exact' => array(
 				'query',
@@ -120,24 +117,22 @@ public static function filter_it() {
 		'args' => $args,
 		'groups' => array()
 	);
-	foreach ( self::$ignore_hooks as $ignore_name => $ignore_group ) {
-		if ( !in_array( $ignore_name, self::$disable_ignore_groups ) ) {
-			$ignore_class = 'hook-group-'  . $ignore_name;
-			foreach ( $ignore_group['exact'] as $value ) {
-				if( $value === $hook_name && !in_array( $ignore_class, $hook_info['groups'] ) ) {
-					$hook_info['groups'][] = $ignore_class;
-				}
+	foreach ( self::$filter_groups as $ignore_name => $ignore_group ) {
+		$ignore_class = 'hook-group-'  . $ignore_name;
+		foreach ( $ignore_group['exact'] as $value ) {
+			if( $value === $hook_name && !in_array( $ignore_class, $hook_info['groups'] ) ) {
+				$hook_info['groups'][] = $ignore_class;
 			}
-			foreach ( $ignore_group['regex'] as $regex ) {
-				if ( preg_match( $regex, $hook_name ) && !in_array( $ignore_class, $hook_info['groups'] ) ) {
-					$hook_info['groups'][] = $ignore_class;
-				}
+		}
+		foreach ( $ignore_group['regex'] as $regex ) {
+			if ( preg_match( $regex, $hook_name ) && !in_array( $ignore_class, $hook_info['groups'] ) ) {
+				$hook_info['groups'][] = $ignore_class;
 			}
 		}
 	}
 
 	if ( !$matched && !$regex_matched ) {
-		self::$actions[] = $hook_info;
+		self::$hooks[] = $hook_info;
 	}
 
 	/*
@@ -156,7 +151,7 @@ public static function filter_it() {
 
 
 public static function output_it() {
-	foreach ( self::$actions as $action ) {
+	foreach ( self::$hooks as $action ) {
 		echo '<pre>';
 		echo esc_html( print_r( $action, true ) );
 		echo "</pre>\n";
@@ -169,4 +164,4 @@ public static function die_it() {
 }
 }
 
-Action_Log::start();
+Hook_Log::start();

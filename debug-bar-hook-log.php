@@ -5,7 +5,7 @@
  * Description: Logs all actions and filters that are called, along with their arguments
  * Author Name: CodeAwhile.com
  * Author URI: http://codeawhile.com/
- * Version: 0.2
+ * Version: 0.3
  */
 
 class Debug_Bar_Hook_Log {
@@ -17,10 +17,10 @@ class Debug_Bar_Hook_Log {
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_resources' ) );
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'enqueue_resources' ) );
 
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/action-log.php' );
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/action-panel.php' );
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/hook-log.php' );
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/hook-panel.php' );
 
-		$panels[] = new Debug_Bar_Action_Panel();
+		$panels[] = new Debug_Bar_Hook_Panel();
 
 		return $panels;
 	}
