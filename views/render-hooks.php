@@ -4,7 +4,13 @@
 		<?php foreach ( $filter_groups as $key => $values ) : ?>
 			<p><input type="checkbox" class="render-hooks-filter" value="<?php echo $key; ?>" /> <?php echo $key . ' (' . implode(', ', array_merge( $values['exact'], $values['regex'] ) ) , ')'; ?></p>
 		<?php endforeach; ?>
-        Search: <input class="render-hooks-search" />
+        <p>
+	        <label for="render-hooks-search">Search:</label> <input id="render-hooks-search" class="render-hooks-search" />
+		</p>
+		<p>
+			<input type="button" class="expand-hooks" value="Expand All" />
+			<input type="button" class="collapse-hooks" value="Collapse All" />
+		</p>
 	</div>
 	<div class="hooks">
 		<ul>

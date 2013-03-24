@@ -3,7 +3,7 @@
 /*
  * Plugin Name: Debug Bar Hook Log
  * Description: Logs all actions and filters that are called, along with their arguments
- * Author Name: CodeAwhile.com
+ * Author: CodeAwhile.com
  * Author URI: http://codeawhile.com/
  * Version: 0.3
  */

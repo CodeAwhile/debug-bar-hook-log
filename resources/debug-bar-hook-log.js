@@ -36,6 +36,16 @@ jQuery(function($){
 		filterActions(true);
 	});
 
+	$('.expand-hooks').click(function(){
+		console.log('here');
+		$('.hook-args').show();
+	});
+
+	$('.collapse-hooks').click(function(){
+		console.log('there');
+		$('.hook-args').hide();
+	});
+
 	$('.hook-title').click(function() {
 		$(this).parent().find('.hook-args').toggle();
 	});
