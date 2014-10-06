@@ -3,7 +3,7 @@ Debug Bar Hook Log
 * Contributors: itsananderson, Zer0Divisor
 * Tags: [debug](http://wordpress.org/extend/plugins/tags/debug), [dev](http://wordpress.org/extend/plugins/tags/dev)
 * Requires at least: 3.1
-* Tested up to: 3.5.1
+* Tested up to: 4.0
 * Stable tag: 0.3
 
 Logs and displays a filterable list of all hooks called during the request, with their arguments
