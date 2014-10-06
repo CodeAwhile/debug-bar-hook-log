@@ -5,7 +5,7 @@
  * Description: Logs all actions and filters that are called, along with their arguments
  * Author: CodeAwhile.com
  * Author URI: http://codeawhile.com/
- * Version: 0.3
+ * Version: 1.0
  */
 
 class Debug_Bar_Hook_Log {
